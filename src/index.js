@@ -23,7 +23,7 @@ const searchScraper = async (searchValue) => {
 
   await page.waitForSelector(searchResultsSelector);
   const results = await page.evaluate(async (searchResultsSelector) => {
-    const news = [...document.querySelectorAll(searchResultsSelector)].map((child) => {
+    const latestNews = [...document.querySelectorAll(searchResultsSelector)].map((child) => {
       const linkChild = child.firstElementChild.firstElementChild;
       const link = linkChild.href;
       const title = linkChild.firstElementChild.innerText;
@@ -31,7 +31,7 @@ const searchScraper = async (searchValue) => {
       const description = linkChild.lastElementChild.innerText;
       return { title, date, description, link };
     })
-    return news;
+    return latestNews;
   }, searchResultsSelector);
 
   await browser.close();

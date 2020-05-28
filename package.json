@@ -1,7 +1,7 @@
 {
   "name": "pybaq-heroku-meetup",
   "version": "1.0.0",
-  "description": "Royal films scraper",
+  "description": "Puppeteer scraper for World Health Organization latest news deployed to Heroku using Github actions",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
