@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 const LINK = 'https://www.who.int/es/news-room/detail/search-results';
 
 const searchScraper = async (searchValue) => {
-  const browser = await puppeteer.launch({ headless: process.env.NODE_ENV === 'production' });
+  const browser = await puppeteer.launch({ headless: process.env.NODE_ENV === 'production', args:['--no-sandbox'] });
   const page = await browser.newPage();
   await page.goto(LINK, { 'waitUntil': 'networkidle0' });
 
