@@ -1,8 +1,8 @@
-name: Deploy production to Heroku
+name: Deploy to Heroku
 on:
   push:
     branches:
-    - master
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,7 +10,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Login to Heroku
-        run: heroku container:login 
+        run: heroku container:login
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       - name: Build and push
